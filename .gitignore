@@ -1,0 +1,6 @@
+.gitignore
+dwm
+*.o
+*.swp
+*.rej
+*.orig
