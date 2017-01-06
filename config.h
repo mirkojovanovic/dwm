@@ -86,11 +86,13 @@ static const char *audioLowerVol[]  = { "mpc", "volume", "-5", NULL };
 static const char *lock[] = { "i3lock-fancy" };
 static const char *clipmenu[] = { "clipmenu", NULL };
 static const char *clipshow[] = { "clipshow", NULL };
+static const char *kblswitch[] = { "kbl-switch", NULL };
 
 static Key keys[] = {
 	/* modifier                     key                     function                  argument */
 	{ MODKEY|ShiftMask,             XK_Super_L,             spawn,                    {.v = clipmenu } },
 	{ MODKEY,                       XK_Super_L,             spawn,                    {.v = clipshow } },
+	{ 0,                            XK_Scroll_Lock,         spawn,                    {.v = kblswitch } },
 	{ MODKEY,                       XK_p,                   spawn,                    {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return,              spawn,                    {.v = termcmd } },
 	{ MODKEY,                       XK_b,                   togglebar,                {0} },
