@@ -1,5 +1,6 @@
 dwm
 *.o
 *.swp
+*.swo
 *.rej
 *.orig
