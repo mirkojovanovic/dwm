@@ -93,6 +93,7 @@ static const char *kblswitch[] = { "kbl-switch", NULL };
 
 static Key keys[] = {
 	/* modifier                     key                     function                  argument */
+	{ MODKEY,                       XK_z,                   togglefullscreen,         {0} },
 	{ MODKEY|ShiftMask,             XK_Super_L,             spawn,                    {.v = clipmenu } },
 	{ MODKEY,                       XK_Super_L,             spawn,                    {.v = clipshow } },
 	{ 0,                            XK_Scroll_Lock,         spawn,                    {.v = kblswitch } },
