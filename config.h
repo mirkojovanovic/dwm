@@ -2,6 +2,7 @@
 
 #include "selfrestart.c"
 #include "gaplessgrid.c"
+#include "moveresize.c"
 
 /* appearance */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
@@ -142,11 +143,19 @@ static Key keys[] = {
 	{ 0,                            0x1008FF16,             spawn,                    {.v = audioPrev } },
 	{ 0,                            0x1008FF17,             spawn,                    {.v = audioNext } },
 	{ 0,                            0x1008FF17,             spawn,                    {.v = audioNext } },
-	{ ShiftMask,             0x1008FF13,             spawn,                    {.v = audioRaiseVol } },
-	{ ShiftMask,             0x1008FF11,             spawn,                    {.v = audioLowerVol } },
+	{ ShiftMask,                    0x1008FF13,             spawn,                    {.v = audioRaiseVol } },
+	{ ShiftMask,                    0x1008FF11,             spawn,                    {.v = audioLowerVol } },
 	{ MODKEY|ShiftMask,             XK_x,                   spawn,                    {.v = lock } },
 	{ MODKEY|ShiftMask,             XK_q,                   quit,                     {0} },
 	{ MODKEY|ShiftMask,             XK_r,                   self_restart,             {0} },
+	{ MODKEY,                       XK_Down,                moveresize,               {.v = "0x 25y 0w 0h"} },
+	{ MODKEY,                       XK_Up,                  moveresize,               {.v = "0x -25y 0w 0h"} },
+	{ MODKEY,                       XK_Right,               moveresize,               {.v = "25x 0y 0w 0h"} },
+	{ MODKEY,                       XK_Left,                moveresize,               {.v = "-25x 0y 0w 0h"} },
+	{ MODKEY|ShiftMask,             XK_Down,                moveresize,               {.v = "0x 0y 0w 25h"} },
+	{ MODKEY|ShiftMask,             XK_Up,                  moveresize,               {.v = "0x 0y 0w -25h"} },
+	{ MODKEY|ShiftMask,             XK_Right,               moveresize,               {.v = "0x 0y 25w 0h"} },
+	{ MODKEY|ShiftMask,             XK_Left,                moveresize,               {.v = "0x 0y -25w 0h"} },
 };
 
 /* button definitions */
