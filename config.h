@@ -1,6 +1,5 @@
 /* See LICENSE file for copyright and license details. */
 
-#include "selfrestart.c"
 #include "gaplessgrid.c"
 #include "moveresize.c"
 
@@ -38,6 +37,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "Viber",  NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Anki",     NULL,       NULL,       0,            1,           -1 },
 	{ "Nautilus", NULL,       NULL,       0,            1,           -1 },
 	{ "mpv",      NULL,       NULL,       0,            1,           -1 },
@@ -147,7 +147,6 @@ static Key keys[] = {
 	{ ShiftMask,                    0x1008FF11,             spawn,                    {.v = audioLowerVol } },
 	{ MODKEY|ShiftMask,             XK_x,                   spawn,                    {.v = lock } },
 	{ MODKEY|ShiftMask,             XK_q,                   quit,                     {0} },
-	{ MODKEY|ShiftMask,             XK_r,                   self_restart,             {0} },
 	{ MODKEY,                       XK_Down,                moveresize,               {.v = "0x 25y 0w 0h"} },
 	{ MODKEY,                       XK_Up,                  moveresize,               {.v = "0x -25y 0w 0h"} },
 	{ MODKEY,                       XK_Right,               moveresize,               {.v = "25x 0y 0w 0h"} },
